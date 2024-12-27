@@ -1,0 +1,44 @@
+&pinctrl {
+    pwm0_default: pwm0_default {
+        group1 {
+            psels = <NRF_PSEL(PWM_OUT0, 0, 8)>,  // PWM0 - Pin P0.08
+            <NRF_PSEL(PWM_OUT1, 0, 12)>;  // PWM1 - Pin P0.12
+        };
+    };
+    pwm0_sleep: pwm0_sleep {
+        group1 {
+            psels = <NRF_PSEL(PWM_OUT0, 0, 8)>,  // Same pins for sleep mode
+            <NRF_PSEL(PWM_OUT1, 0, 12)>;
+            low-power-enable;
+        };
+    };
+};
+
+&pwm0 {
+    status = "okay";
+    pinctrl-0 = <&pwm0_default>;
+    pinctrl-1 = <&pwm0_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+&backlight {
+    compatible = "pwm-leds";
+    pwm_led_0 {
+        pwms = <&pwm0 0 PWM_MSEC(10) PWM_POLARITY_NORMAL>;  // First LED on PWM0 (P0.08)
+    };
+    pwm_led_1 {
+        pwms = <&pwm0 1 PWM_MSEC(10) PWM_POLARITY_NORMAL>;  // Second LED on PWM1 (P0.12)
+    };
+    // Repeat for all other LEDs (if you need more than 2, use additional PWM pins)
+    pwm_led_2 {
+        pwms = <&pwm0 2 PWM_MSEC(10) PWM_POLARITY_NORMAL>;
+    };
+    pwm_led_3 {
+        pwms = <&pwm0 3 PWM_MSEC(10) PWM_POLARITY_NORMAL>;
+    };
+    // Continue adding more LEDs as needed
+};
+
+&chosen {
+    zmk,backlight = &backlight;
+};
