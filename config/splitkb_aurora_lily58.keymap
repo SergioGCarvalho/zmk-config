@@ -73,3 +73,6 @@
     chain-length = <29>;
 };
 
+&nice_view_spi {
+  cs-gpios = <&gpio0 8 GPIO_ACTIVE_HIGH>;
+};
