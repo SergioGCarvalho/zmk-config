@@ -15,32 +15,13 @@
 / {
 
 behaviors {
-    // Left Shift Tap-Hold for Shift + Caps Word
-    caps_word_lshft: caps_word_lshft {
-        compatible = "zmk,behavior-tap-hold";
-        label = "Caps Word Left Shift";
-        tapping-term-ms = <200>;
-        #binding-cells = <0>;
-        bindings = <&kp LSHFT>, <&caps_word>;
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+        };
     };
-
-    // Right Shift Tap-Hold for Shift + Caps Word
-    caps_word_rshft: caps_word_rshft {
-        compatible = "zmk,behavior-tap-hold";
-        label = "Caps Word Right Shift";
-        tapping-term-ms = <200>;
-        #binding-cells = <0>;
-        bindings = <&kp RSHFT>, <&caps_word>;
-    };
-
-    // Simultaneous Shift Keys for Caps Lock
-    caps_lock_simultaneous: caps_lock_simultaneous {
-        compatible = "zmk,behavior-simultaneous";
-        #binding-cells = <0>;
-        bindings = <&kp LSHFT>, <&kp RSHFT>, <&kp CAPS>;
-        timeout-ms = <50>;
-    };
-};
 
     keymap {
         compatible = "zmk,keymap";
