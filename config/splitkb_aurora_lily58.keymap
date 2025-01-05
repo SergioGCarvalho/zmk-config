@@ -71,29 +71,32 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 behaviors {
-        // Left Shift Tap-Hold for Shift + Caps Word
-        caps_word_lshft: caps_word_lshft {
-            compatible = "zmk,behavior-tap-hold";
-            label = "Caps Word Left Shift";
-            tapping-term-ms = <200>;
-            bindings = <&kp LSHFT>, <&caps_word>;
-        };
-
-        // Right Shift Tap-Hold for Shift + Caps Word
-        caps_word_rshft: caps_word_rshft {
-            compatible = "zmk,behavior-tap-hold";
-            label = "Caps Word Right Shift";
-            tapping-term-ms = <200>;
-            bindings = <&kp RSHFT>, <&caps_word>;
-        };
-
-        // Simultaneous Shift Keys for Caps Lock
-        caps_lock_simultaneous: caps_lock_simultaneous {
-            compatible = "zmk,behavior-simultaneous";
-            bindings = <&kp LSHFT>, <&kp RSHFT>, <&kp CAPS>;
-            timeout-ms = <50>;
-        };
+    // Left Shift Tap-Hold for Shift + Caps Word
+    caps_word_lshft: caps_word_lshft {
+        compatible = "zmk,behavior-tap-hold";
+        label = "Caps Word Left Shift";
+        tapping-term-ms = <200>;
+        #binding-cells = <0>;
+        bindings = <&kp LSHFT>, <&caps_word>;
     };
+
+    // Right Shift Tap-Hold for Shift + Caps Word
+    caps_word_rshft: caps_word_rshft {
+        compatible = "zmk,behavior-tap-hold";
+        label = "Caps Word Right Shift";
+        tapping-term-ms = <200>;
+        #binding-cells = <0>;
+        bindings = <&kp RSHFT>, <&caps_word>;
+    };
+
+    // Simultaneous Shift Keys for Caps Lock
+    caps_lock_simultaneous: caps_lock_simultaneous {
+        compatible = "zmk,behavior-simultaneous";
+        #binding-cells = <0>;
+        bindings = <&kp LSHFT>, <&kp RSHFT>, <&kp CAPS>;
+        timeout-ms = <50>;
+    };
+};
     };
 };
 
