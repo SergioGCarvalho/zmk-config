@@ -90,7 +90,7 @@ behaviors {
         // Simultaneous Shift Keys for Caps Lock
         caps_lock_simultaneous: caps_lock_simultaneous {
             compatible = "zmk,behavior-simultaneous";
-            bindings = <&kp LSHFT>, <&kp RSHFT>, <&caps>;
+            bindings = <&kp LSHFT>, <&kp RSHFT>, <&kp CAPS>;
             timeout-ms = <50>;
         };
     };
