@@ -72,7 +72,7 @@
         };
 behaviors {
         // Left Shift Tap-Hold for Shift + Caps Word
-        caps_word_lshft: behavior {
+        caps_word_lshft: caps_word_lshft {
             compatible = "zmk,behavior-tap-hold";
             label = "Caps Word Left Shift";
             tapping-term-ms = <200>;
@@ -80,7 +80,7 @@ behaviors {
         };
 
         // Right Shift Tap-Hold for Shift + Caps Word
-        caps_word_rshft: behavior {
+        caps_word_rshft: caps_word_rshft {
             compatible = "zmk,behavior-tap-hold";
             label = "Caps Word Right Shift";
             tapping-term-ms = <200>;
@@ -88,7 +88,7 @@ behaviors {
         };
 
         // Simultaneous Shift Keys for Caps Lock
-        caps_lock_simultaneous: behavior {
+        caps_lock_simultaneous: caps_lock_simultaneous {
             compatible = "zmk,behavior-simultaneous";
             bindings = <&kp LSHFT>, <&kp RSHFT>, <&caps>;
             timeout-ms = <50>;
