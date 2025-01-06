@@ -42,12 +42,13 @@ combos {
         };
     };
 macros {
-    caps_lock_macro: caps_lock_macro {
+    lower_layer_macro: lower_layer_macro {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = 
-            <&rgb_ug RGB_COLOR_HSB(120, 100, 100)>,  // Set underglow to green when Caps Lock is pressed
-            <&kp CAPS>;
+        bindings =
+            <&macro_press &mo 1>  // Activate lower layer
+            , <&macro_tap &rgb_ug RGB_COLOR_HSB(240, 100, 1)> // Change underglow to Blue when in Lower Layer
+            , <&macro_release &mo 1>; // Release lower layer
     };
 };
  
