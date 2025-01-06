@@ -46,7 +46,7 @@ macros {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = 
-            <&rgb_ug RGB_COLOR_HSB(120, 100, 1)>,  // Set underglow to green when Caps Lock is pressed
+            <&rgb_ug RGB_COLOR_HSB(120, 100, 100)>,  // Set underglow to green when Caps Lock is pressed
             <&kp CAPS>;
     };
 };
