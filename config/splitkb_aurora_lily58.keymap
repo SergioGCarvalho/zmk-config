@@ -30,23 +30,17 @@ behaviors {
         #binding-cells = <0>;
         bindings = <&sk RSHFT>, <&caps_word>;
     };
-
-
 };
 
-macros {
-        // Simultaneous Shift Keys for Caps Lock
-        caps_lock_macro: caps_lock_macro {
-            compatible = "zmk,behavior-macro";
-            label = "Caps Lock Macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT &kp RSHFT>
-                , <&macro_tap &kp CAPS>
-                , <&macro_release &kp LSHFT &kp RSHFT>;
+combos {
+   // Combo for Left + Right Shift triggering Caps Lock
+    caps_lock_combo {
+        timeout-ms = <50>;  // Time window for the combo
+        key-positions = <27 31>;  // Positions of Left Shift and Right Shift (Adjust if needed)
+        bindings = <&caps>;  // Caps Lock action when both keys are pressed
         };
     };
-
+ 
     keymap {
         compatible = "zmk,keymap";
 
