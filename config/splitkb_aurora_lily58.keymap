@@ -33,6 +33,7 @@ behaviors {
 };
 
 combos {
+    compatible = "zmk,combos";
    // Combo for Left + Right Shift triggering Caps Lock
     caps_lock_combo {
         timeout-ms = <50>;  // Time window for the combo
