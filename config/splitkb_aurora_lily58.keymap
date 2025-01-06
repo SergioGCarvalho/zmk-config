@@ -18,7 +18,7 @@ behaviors {
     // Left Shift tap-dance Caps Word
     caps_word_lshft: caps_word_lshft {
         compatible = "zmk,behavior-tap-dance";
-        tapping-term-ms = <200>;
+        tapping-term-ms = <300>;
         #binding-cells = <0>;
         bindings = <&sk LSHFT>, <&caps_word>;
     };
@@ -26,9 +26,9 @@ behaviors {
     // Right Shift tap-dance Caps Word
     caps_word_rshft: caps_word_rshft {
         compatible = "zmk,behavior-tap-dance";
-        tapping-term-ms = <200>;
+        tapping-term-ms = <300>;
         #binding-cells = <0>;
-        bindings = <&sk RSHFT>, <&caps_word>;
+        bindings = <&sk RSHFT>, <&caps_word>;Fff FFF Fff
     };
 };
 
@@ -36,7 +36,7 @@ combos {
    // Combo for Left + Right Shift triggering Caps Lock
     caps_lock_combo {
         timeout-ms = <50>;  // Time window for the combo
-        key-positions = <27 31>;  // Positions of Left Shift and Right Shift (Adjust if needed)
+        key-positions = <0 1>;  // Positions of Left Shift and Right Shift (Adjust if needed)
         bindings = <&kp CAPS>;  // Caps Lock action when both keys are pressed
         };
     };
