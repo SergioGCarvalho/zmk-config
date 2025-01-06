@@ -36,11 +36,20 @@ combos {
     compatible = "zmk,combos";
    // Combo for Left + Right Shift triggering Caps Lock
     caps_lock_combo {
-        timeout-ms = <50>;  // Time window for the combo
-        key-positions = <36 49>;  // Positions of Left Shift and Right Shift (Adjust if needed)
-        bindings = <&kp CAPS>;  // Caps Lock action when both keys are pressed
+        timeout-ms = <50>;
+        key-positions = <36 49>;
+        bindings = <&kp CAPS>;
         };
     };
+macros {
+    caps_lock_macro: caps_lock_macro {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = 
+            <&rgb_ug RGB_COLOR_HSB(120, 100, 1)>,  // Set underglow to green when Caps Lock is pressed
+            <&kp CAPS>;
+    };
+};
  
     keymap {
         compatible = "zmk,keymap";
