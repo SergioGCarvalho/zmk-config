@@ -65,7 +65,7 @@
             // | SHIFT |  Z  |  X«  |  C©   |  V√   |  B∫   | LOWER |   | RAISE |  N¬   |  Mµ   |  Ç¸  |  <-  |   |  | -> |
             //                | ALT  | GUI  | ENTER|  SPACE |                   | BSPC | RAISE| BSPC  | -_—    |
             bindings = <
-            &kp ESC   &kp N6 &kp N5 &kp N2   &kp N3   &kp N4                             &kp N5 &kp N6   &kp N7    &kp N8   &kp N9   &kp GRAVE
+            &kp ESC   &kp N0 &kp N1 &kp N2   &kp N3   &kp N4                             &kp N5 &kp N6   &kp N7    &kp N8   &kp N9   &kp GRAVE
             &kp TAB   &kp Q  &kp W  &kp F    &kp P    &kp B                              &kp J  &kp L    &kp U     &kp O    &kp Y    &kp COMMA
             &kp LCTRL &kp A  &kp R  &kp S    &kp T    &kp G                              &kp M  &kp N    &kp E     &kp I    &kp UP   &kp DOT
             &caps_word_lshft &kp Z &kp X &kp C &kp D  &kp V  &mo 1              &mo 2    &kp K  &kp H    &kp COMMA &kp LEFT &kp DOWN &kp RIGHT
