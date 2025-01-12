@@ -57,7 +57,7 @@
             // | SHIFT |  Z     |  X«    |  C©    |  D     |  V√   | LOWER |   | RAISE |  K„    |  H    |  '"      |  <-    |   |    |  ->     |
             //                  |  ALT   |  GUI   |  ENTER | SPACE |                   | BSPC   |  (    |  )       | repeat |
             bindings = <
-            &kp SEMI      &kp COLON &kp APOS &kp DQT &kp COMMA &kp LT                  &kp GT &kp LBKT &kp LBRC &kp RBKT &kp RBRC &kp GRAVE
+            &kp TILDE    &kp NUHS &kp TILDE2 &kp C_BRI_INC &kp C_BRI_DEC &kp C_AL_FILES                    &kp C_AL_SCREEN_SAVER &kp C_AL_TASK_MANAGER &kp K_WWW &kp C_AL_WWW &kp C_AL_MAIL &kp C_AL_TEXT_EDITOR
             &kp TAB      &kp Q    &kp W    &kp F    &kp P    &kp B                       &kp J    &kp L    &kp U     &kp O    &kp Y    &kp COMMA
             &kp LCTRL    &kp A    &kp R    &kp S    &kp T    &kp G                       &kp M    &kp N    &kp E     &kp I    &kp UP   &kp GRAVE
             &c_w_lf      &kp Z    &kp X    &kp C    &kp D    &kp V   &mo 1       &mo 2   &kp K    &kp H    &kp APOS  &kp LEFT &kp DOWN &kp RIGHT
@@ -73,11 +73,11 @@
             // |   RGB-   |     RGB+      |             |            |           |            |        |  |       |          |  _        |  +         |  ª      |   `     |  "|"    |
             //                            |    BTCLR    |            |           |   K_LOCK   |                   |          |           |            |         |
             bindings = <
-            &out OUT_TOG    &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                    &kp K_MUTE &kp K_VOL_DN &kp K_VOL_UP &kp K_PP &kp K_PREV &kp K_NEXT
+            &out OUT_TOG    &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                    &kp K_MUTE &kp K_VOL_DN &kp K_VOL_UP &kp C_PP &kp C_PREV &kp C_NEXT
             &kp F1          &kp F2          &kp F3       &kp F4       &kp F5       &kp F6                          &kp F7     &kp F8       &kp F9       &kp F10  &kp F11    &kp F12
             &kp GRAVE       &kp EXCL        &kp AT       &kp HASH     &kp DOLLAR   &kp PRCNT                       &kp CARET  &kp AMPS     &kp STAR     &kp LPAR &kp RPAR   &kp TILDE
             &rgb_ug RGB_BRD &rgb_ug RGB_BRI &trans       &trans       &trans       &trans       &trans     &trans  &kp MINUS  &kp PLUS     &kp LBRC     &kp RBRC &kp PIPE   &trans
-            &bt BT_CLR      &trans          &trans       &kp K_LOCK                                                &trans     &trans       &trans       &rgb_ug RGB_COLOR_HSB(128,100,1)
+            &bt BT_CLR      &trans          &trans       &kp C_AL_LOCK                                                &trans     &trans       &trans       &rgb_ug RGB_COLOR_HSB(128,100,1)
             >;
         };
 
