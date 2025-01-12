@@ -57,11 +57,11 @@
             // | SHIFT |  Z     |  X«    |  C©    |  D     |  V√   | LOWER |   | RAISE |  K„    |  H    |  '"      |  <-    |   |    |  ->     |
             //                  |  ALT   |  GUI   |  ENTER | SPACE |                   | BSPC   |  (    |  )       | repeat |
             bindings = <
-            &kp TILDE    &kp NUHS &kp TILDE2 &kp C_BRI_INC &kp C_BRI_DEC &kp C_AL_FILES                    &kp C_AL_SCREEN_SAVER &kp C_AL_TASK_MANAGER &kp K_WWW &kp C_AL_WWW &kp C_AL_MAIL &kp C_AL_TEXT_EDITOR
+            &kp ESC      &kp EXCL &kp AT   &kp HASH &kp DLLR &kp PLUS                    &kp NUBS &kp NUHS &kp KP_PLUS &kp KP_MINUS   &kp KP_MULTIPLY   &kp KP_DIVIDE
             &kp TAB      &kp Q    &kp W    &kp F    &kp P    &kp B                       &kp J    &kp L    &kp U     &kp O    &kp Y    &kp COMMA
             &kp LCTRL    &kp A    &kp R    &kp S    &kp T    &kp G                       &kp M    &kp N    &kp E     &kp I    &kp UP   &kp GRAVE
-            &c_w_lf      &kp Z    &kp X    &kp C    &kp D    &kp V   &mo 1       &mo 2   &kp K    &kp H    &kp APOS  &kp LEFT &kp DOWN &kp RIGHT
-            &kp LALT     &kp LGUI &kp RET  &kp SPACE                                     &kp BSPC &kp LPAR &kp RPAR  &key_repeat
+            &c_w_lf      &kp Z    &kp X    &kp C    &kp D    &kp V   &mo 1       &mo 2   &kp K    &kp H    &kp APOS  &kp LEFT &kp DOWN &key_repeat
+            &kp LALT     &kp LGUI &kp RET  &kp SPACE                                     &kp BSPC &kp LPAR &kp RPAR  &none
             >;
         };
 
