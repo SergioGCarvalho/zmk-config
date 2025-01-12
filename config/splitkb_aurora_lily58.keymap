@@ -57,7 +57,7 @@
             // | SHIFT |  Z     |  X«    |  C©    |  D     |  V√   | LOWER |   | RAISE |  K„    |  H    |  '"      |  <-    |   |    |  ->     |
             //                  |  ALT   |  GUI   |  ENTER | SPACE |                   | BSPC   |  (    |  )       | repeat |
             bindings = <
-            &kp ESC      &kp RPAR &kp PLUS &kp MINUS &kp UNDER &kp FSLH                  &kp QMARK &kp BSLH &kp PIPE &kp NUBS &kp PIPE2 &kp AT
+            &kp SEMI      &kp COLON &kp APOS &kp DQT &kp COMMA &kp LT                  &kp GT &kp LBKT &kp LBRC &kp RBKT &kp RBRC &kp GRAVE
             &kp TAB      &kp Q    &kp W    &kp F    &kp P    &kp B                       &kp J    &kp L    &kp U     &kp O    &kp Y    &kp COMMA
             &kp LCTRL    &kp A    &kp R    &kp S    &kp T    &kp G                       &kp M    &kp N    &kp E     &kp I    &kp UP   &kp GRAVE
             &c_w_lf      &kp Z    &kp X    &kp C    &kp D    &kp V   &mo 1       &mo 2   &kp K    &kp H    &kp APOS  &kp LEFT &kp DOWN &kp RIGHT
