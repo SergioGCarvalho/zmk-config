@@ -65,7 +65,7 @@
             // | SHIFT |  Z     |  X«    |  C©    |  D     |  V√   | LOWER |   | RAISE |  K„    |  H    |  '"      |  <-    |   |    |  ->     |
             //                  |  ALT   |  GUI   |  ENTER | SPACE |                   | BSPC   |  (    |  )       | repeat |
             bindings = <
-            &kp ESC      &kp EXCL &kp AT   &kp HASH &kp DLLR &kp PLUS                    &kp pt_c_cedilla &kp KP_DOT &kp KP_COMMA &kp KP_LPAR   &kp KP_RPAR   &kp KP_DIVIDE
+            &kp ESC      &kp EXCL &kp AT   &kp HASH &kp DLLR &kp PLUS                    &pt_c_cedilla &kp KP_DOT &kp KP_COMMA &kp KP_LPAR   &kp KP_RPAR   &kp KP_DIVIDE
             &kp TAB      &kp Q    &kp W    &kp F    &kp P    &kp B                       &kp J    &kp L    &kp U     &kp O    &kp Y    &kp COMMA
             &kp LCTRL    &kp A    &kp R    &kp S    &kp T    &kp G                       &kp M    &kp N    &kp E     &kp I    &kp UP   &kp GRAVE
             &c_w_lf      &kp Z    &kp X    &kp C    &kp D    &kp V   &mo 1       &mo 2   &kp K    &kp H    &kp APOS  &kp LEFT &kp DOWN &key_repeat
