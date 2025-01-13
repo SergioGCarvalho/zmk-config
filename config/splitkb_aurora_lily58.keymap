@@ -73,8 +73,9 @@
 
         // C cedilla mac
         c_mac_cedilla: c_mac_cedilla {
-            compatible = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
+            tapping-term-ms = <300>;
             bindings = <&kp C>, <&mac_c_cedilla>;
         };
     };
