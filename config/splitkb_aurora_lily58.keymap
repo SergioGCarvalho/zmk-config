@@ -27,27 +27,25 @@
 #define OS_UNICODE_TRAIL &macro_tap &kp SPACE  // <- Space terminates unicode input on Linux
 
 // use helper-script to define linux unicode macros, e.g.,
- ZMK_UNICODE_PAIR(linux_c_cedilla,      N0, N0, E, N7,   N0, N0, C, N7)  // ç/Ç
- ZMK_UNICODE_PAIR(pt_a_grave,        N0, N0, E, N0,   N0, N0, C, N0)  // à/À
- ZMK_UNICODE_PAIR(pt_a_circumflex,   N0, N0, E, N2,   N0, N0, C, N2)  // â/Â
- ZMK_UNICODE_PAIR(pt_c_cedilla,      N0, N0, E, N7,   N0, N0, C, N7)  // ç/Ç
- ZMK_UNICODE_PAIR(pt_e_grave,        N0, N0, E, N8,   N0, N0, C, N8)  // è/È
- ZMK_UNICODE_PAIR(pt_e_acute,        N0, N0, E, N9,   N0, N0, C, N9)  // é/É
- ZMK_UNICODE_PAIR(pt_e_circumflex,   N0, N0, E, A,    N0, N0, C, A)   // ê/Ê
- ZMK_UNICODE_PAIR(pt_o_circumflex,   N0, N0, F, N4,   N0, N0, D, N4)  // ô/Ô
- ZMK_UNICODE_PAIR(pt_oa,             N0, N0,  F, N3,  N0, N0,  D, N3) // ó/Ó
- ZMK_UNICODE_PAIR(pt_u_grave,        N0, N0, F, N9,   N0, N0, D, N9)  // ù/Ù
- ZMK_UNICODE_PAIR(pt_u_circumflex,   N0, N0, F, B,    N0, N0, D, B)   // û/Û
- ZMK_UNICODE_PAIR(pt_a_tilde,        N0, N0, E, N3,   N0, N0,  C, N3) // ã/Ã
- ZMK_UNICODE_PAIR(pt_aa,             N0, N0,  E, N1,  N0, N0,  C, N1) // á/Á
+ ZMK_UNICODE_PAIR(lin_c_cedilla,      N0, N0, E, N7,   N0, N0, C, N7)  // ç/Ç
+ ZMK_UNICODE_PAIR(lin_a_grave,        N0, N0, E, N0,   N0, N0, C, N0)  // à/À
+ ZMK_UNICODE_PAIR(lin_a_circumflex,   N0, N0, E, N2,   N0, N0, C, N2)  // â/Â
+ ZMK_UNICODE_PAIR(lin_c_cedilla,      N0, N0, E, N7,   N0, N0, C, N7)  // ç/Ç
+ ZMK_UNICODE_PAIR(lin_e_grave,        N0, N0, E, N8,   N0, N0, C, N8)  // è/È
+ ZMK_UNICODE_PAIR(lin_e_acute,        N0, N0, E, N9,   N0, N0, C, N9)  // é/É
+ ZMK_UNICODE_PAIR(lin_e_circumflex,   N0, N0, E, A,    N0, N0, C, A)   // ê/Ê
+ ZMK_UNICODE_PAIR(lin_o_circumflex,   N0, N0, F, N4,   N0, N0, D, N4)  // ô/Ô
+ ZMK_UNICODE_PAIR(lin_oa,             N0, N0,  F, N3,  N0, N0,  D, N3) // ó/Ó
+ ZMK_UNICODE_PAIR(lin_u_grave,        N0, N0, F, N9,   N0, N0, D, N9)  // ù/Ù
+ ZMK_UNICODE_PAIR(lin_u_circumflex,   N0, N0, F, B,    N0, N0, D, B)   // û/Û
+ ZMK_UNICODE_PAIR(lin_a_tilde,        N0, N0, E, N3,   N0, N0,  C, N3) // ã/Ã
+ ZMK_UNICODE_PAIR(lin_aa,             N0, N0,  E, N1,  N0, N0,  C, N1) // á/Á
 
  // activate macOS-mode for helper script
  #undef OS_UNICODE_LEAD
  #undef OS_UNICODE_TRAIL
  #define OS_UNICODE_LEAD &macro_press &kp LALT  // <- macOS compose sequence (must be activated in system preferences)
  #define OS_UNICODE_TRAIL &macro_release &kp LALT  // <- Releasing Left-Alt terminates unicode input on macOns
-
- ZMK_UNICODE_PAIR(mac_c_cedilla,      N0, N0, E, N7,   N0, N0, C, N7)  // ç/Ç
 
  ZMK_UNICODE_PAIR(mac_a_grave,        N0, N0, E, N0,   N0, N0, C, N0)  // à/À
  ZMK_UNICODE_PAIR(mac_a_circumflex,   N0, N0, E, N2,   N0, N0, C, N2)  // â/Â
@@ -71,6 +69,13 @@
             tapping-term-ms = <300>;
             #binding-cells = <0>;
             bindings = <&kp LSHFT>, <&caps_word>;
+        };
+
+        // C cedilla mac
+        c_mac_cedilla: c_mac_cedilla {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp C>, <&mac_c_cedilla>;
         };
     };
 
@@ -107,10 +112,10 @@
             // | SHIFT |  Z     |  X«    |  C©    |  D     |  V√   | LOWER |   | RAISE |  K„    |  H    |  '"      |  <-    |   |    |  ->     |
             //                  |  ALT   |  GUI   |  ENTER | SPACE |                   | BSPC   |  (    |  )       | repeat |
             bindings = <
-            &kp ESC      &kp GRAVE &kp TILDE &kp CARET &kp SINGLE_QUOTE &kp LESS_THAN    &kp N5   &kp N6   &kp N7    &linux_c_cedilla   &mac_c_cedilla   &none
+            &kp ESC      &kp GRAVE &kp TILDE &kp CARET &kp SINGLE_QUOTE &kp LESS_THAN    &kp N5   &kp N6   &kp N7    &lin_c_cedilla   &mac_c_cedilla   &none
             &kp TAB      &kp Q    &kp W    &kp F    &kp P    &kp B                       &kp J    &kp L    &kp U     &kp O    &kp Y    &kp COMMA
             &kp LCTRL    &kp A    &kp R    &kp S    &kp T    &kp G                       &kp M    &kp N    &kp E     &kp I    &kp UP   &kp GRAVE
-            &c_w_lf      &kp Z    &kp X    &mt LSHIFT C linux_c_cedilla &kp D    &kp V   &mo 1       &mo 2   &kp K    &kp H    &kp APOS  &kp LEFT &kp DOWN &key_repeat
+            &c_w_lf      &kp Z    &kp X    &mac_c_cedilla &kp D    &kp V   &mo 1       &mo 2   &kp K    &kp H    &kp APOS  &kp LEFT &kp DOWN &key_repeat
             &kp LALT     &kp LGUI &kp RET  &kp SPACE                                     &kp BSPC &kp LPAR &kp RPAR  &none
             >;
         };
