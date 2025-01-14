@@ -71,7 +71,7 @@
             bindings = <&kp LSHFT>, <&caps_word>;
         };
 
-        c_w_lf: c_w_lf {
+        c_c_mac: c_c_mac {
             compatible = "zmk,behavior-tap-dance";
             tapping-term-ms = <300>;
             #binding-cells = <0>;
