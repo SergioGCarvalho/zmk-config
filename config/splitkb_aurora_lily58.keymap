@@ -77,6 +77,13 @@
             #binding-cells = <0>;
             bindings = <&kp C>, <&mac_c_cedilla>;
         };
+
+        c_c_combined: c_c_combined {
+            compatible = "zmk,behavior-tap-dance";
+            tapping-term-ms = <300>;  // Adjust if needed
+            #binding-cells = <0>;
+            bindings = <&kp C>, <&mac_c_cedilla>, <&lin_c_cedilla>;
+        };
     };
 
     combos {
@@ -115,7 +122,7 @@
             &kp ESC      &kp GRAVE &kp TILDE &kp CARET &kp SINGLE_QUOTE &kp LESS_THAN    &kp N5   &kp N6   &kp N7    &lin_c_cedilla   &mac_c_cedilla   &none
             &kp TAB      &kp Q    &kp W    &kp F    &kp P    &kp B                       &kp J    &kp L    &kp U     &kp O    &kp Y    &kp COMMA
             &kp LCTRL    &kp A    &kp R    &kp S    &kp T    &kp G                       &kp M    &kp N    &kp E     &kp I    &kp UP   &kp GRAVE
-            &c_w_lf      &kp Z    &kp X    &c_c_mac &kp D    &kp V   &mo 1       &mo 2   &kp K    &kp H    &kp APOS  &kp LEFT &kp DOWN &key_repeat
+            &c_w_lf      &kp Z    &kp X    &c_c_combined &kp D    &kp V   &mo 1       &mo 2   &kp K    &kp H    &kp APOS  &kp LEFT &kp DOWN &key_repeat
             &kp LALT     &kp LGUI &kp RET  &kp SPACE                                     &kp BSPC &kp LPAR &kp RPAR  &none
             >;
         };
