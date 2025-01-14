@@ -71,11 +71,11 @@
             bindings = <&kp LSHFT>, <&caps_word>;
         };
 
-        // C cedilla mac
-        c_hold_tap: c_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            tapping-term-ms = <300>;  // Time threshold for tap vs hold
-            bindings = <&kp C>, <&mo 1>;  // Tap: C, Hold: Activate Layer 1 (for 'ç')
+        c_w_lf: c_w_lf {
+            compatible = "zmk,behavior-tap-dance";
+            tapping-term-ms = <300>;
+            #binding-cells = <0>;
+            bindings = <&kp C>, <&mac_c_cedilla>;
         };
     };
 
@@ -152,11 +152,6 @@
             &trans  &trans  &trans    &trans   &trans    &trans      &studio_unlock    &trans
             >;
         };
-
-        layer_1 {
-            bindings = <&mac_c_cedilla>;
-        };
-
     };
 };
 
