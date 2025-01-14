@@ -72,11 +72,10 @@
         };
 
         // C cedilla mac
-        c_mac_cedilla: c_mac_cedilla {
-            compatible = "zmk,behavior-hold-tap";
+        mac_c_cedilla: mac_c_cedilla {
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&kp C &macro_tap &mac_c_cedilla>;
+            bindings = <&kp LALT &kp C>;  // Triggers the mac_c_cedilla macro
         };
     };
 
