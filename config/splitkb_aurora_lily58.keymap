@@ -75,7 +75,7 @@
         c_hold_tap: c_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             tapping-term-ms = <300>;  // Time threshold for tap vs hold
-            bindings = <&kp C>, <&mac_c_cedilla>;  // Tap: C, Hold: &mac_c_cedilla
+            bindings = <&kp C>, <&mo 1>;  // Tap: C, Hold: Activate Layer 1 (for 'ç')
         };
     };
 
@@ -151,6 +151,10 @@
             &kp F7    &kp F8 &kp F9 &kp F10 &kp F11 &kp F12   &trans   &trans    &kp KP_PLUS &kp MINUS &kp EQUAL &kp LBKT &kp RBKT  &kp BSLH
             &trans  &trans  &trans    &trans   &trans    &trans      &studio_unlock    &trans
             >;
+        };
+
+        layer_1 {
+            bindings = <&mac_c_cedilla>;
         };
 
     };
