@@ -76,15 +76,6 @@ ZMK_TAP_DANCE(c_c_mac,
 
 ZMK_TAP_DANCE(c_c_combined,
     tapping-term-ms = <300>;
-    bindings = <&kp C>, <&mac_c_cedilla>, <&lin_c_cedilla>
-)
-
-ZMK_HOLD_TAP(c_c_combined,
-    flavor = "balanced";
-    tapping-term-ms = <300>;
-    require-prior-idle-ms = <150>;
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
-    hold-trigger-on-release;
     bindings = <&kp C>, <&mac_c_cedilla>, <&lin_c_cedilla>;
 )
 
