@@ -94,8 +94,7 @@ ZMK_TAP_DANCE(lp_combo,
     bindings = <&lp_shift>, <&lp_alt>;
 )
 
-ZMK_COMBO(caps_lock_combo, &kp CAPS, LH4 LF6, ALL)
-ZMK_COMBO(paste,    &kp LS(INS), LB1 LB2)  // paste, active on all layers
+ZMK_COMBO(caps_lock_combo, &kp CAPS, LH3 LF5)
 
 
 ZMK_MACRO(lower_layer_macro,
