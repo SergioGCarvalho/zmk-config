@@ -105,17 +105,11 @@ ZMK_MACRO(lower_layer_macro,
                <&macro_release &mo 1>;
 )
 
-ZMK_LAYER(default_layer,
-    // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-         &kp ESC       &kp GRAVE     &kp TILDE     &kp CARET     &kp SQUOTE    &kp LESS              &kp N5        &kp N6        &kp N7        &lin_c_cedilla &mac_c_cedilla &none
-    // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-         &kp TAB       &kp Q         &kp W         &kp F         &kp P         &kp B                 &kp J         &kp L         &kp U         &kp O         &kp Y         &kp COMMA
-    // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-         &kp LCTRL     &kp A         &kp R         &kp S         &kp T         &kp G                 &kp M         &kp N         &kp E         &kp I         &kp UP        &key_repeat
-    // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼───┬───┤───┬─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-         &kp LSHIFT    &kp Z         &kp X         &c_c_combined &kp D         &kp V      &mo 1 &mo 2 &kp K        &kp H         &kp APOS      &kp LEFT      &kp DOWN      &kp RIGHT
-    // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯       ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
-                                     &kp LALT      &kp LGUI      &kp RET       &kp SPACE             &kp BSPC      &lp_combo     &none         &none
+ZMK_LAYER(default_layer,&kp ESC      &kp GRAVE &kp TILDE &kp CARET &kp SINGLE_QUOTE &kp LESS_THAN    &kp N5   &kp N6   &kp N7    &lin_c_cedilla   &mac_c_cedilla   &none
+&kp TAB      &kp Q    &kp W    &kp F    &kp P    &kp B                       &kp J    &kp L    &kp U     &kp O    &kp Y    &kp COMMA
+&kp LCTRL    &kp A    &kp R    &kp S    &kp T    &kp G                       &kp M    &kp N    &kp E     &kp I    &kp UP   &key_repeat
+&c_w_lf      &kp Z    &kp X    &c_c_combined &kp D    &kp V   &mo 1     &mo 2   &kp K    &kp H    &kp APOS  &kp LEFT &kp DOWN &kp RIGHT
+&kp LALT     &kp LGUI &kp RET  &kp SPACE                                     &kp BSPC &lp_combo &none  &none
 )
 
 
