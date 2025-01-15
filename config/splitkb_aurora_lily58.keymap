@@ -95,6 +95,8 @@ ZMK_TAP_DANCE(lp_combo,
 )
 
 ZMK_COMBO(caps_lock_combo, &kp CAPS, LH4 LF6, ALL)
+ZMK_COMBO(paste,    &kp LS(INS), LB1 LB2)  // paste, active on all layers
+
 
 ZMK_MACRO(lower_layer_macro,
     wait-ms = <100>;
