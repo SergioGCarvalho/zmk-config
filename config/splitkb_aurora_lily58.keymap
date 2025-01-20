@@ -79,19 +79,34 @@ ZMK_TAP_DANCE(c_c_combined,
     bindings = <&kp C>, <&mac_c_cedilla>, <&lin_c_cedilla>;
 )
 
-ZMK_MOD_MORPH(lp_shift,
+ZMK_MOD_MORPH(lpl_shift,
     bindings = <&kp LPAR>, <&kp LBRC>;
     mods = <MOD_LSFT>;
 )
 
-ZMK_MOD_MORPH(lp_alt,
+ZMK_MOD_MORPH(lpl_alt,
     bindings = <&kp LPAR>, <&kp LBKT>;
     mods = <MOD_LALT>;
 )
 
-ZMK_TAP_DANCE(lp_combo,
+ZMK_MOD_MORPH(lpr_shift,
+    bindings = <&kp RPAR>, <&kp RBRC>;
+    mods = <MOD_LSFT>;
+)
+
+ZMK_MOD_MORPH(lpr_alt,
+    bindings = <&kp RPAR>, <&kp RBKT>;
+    mods = <MOD_LALT>;
+)
+
+ZMK_TAP_DANCE(lpl_combo,
     tapping-term-ms = <300>;
-    bindings = <&lp_shift>, <&lp_alt>;
+    bindings = <&lpl_shift>, <&lpl_alt>;
+)
+
+ZMK_TAP_DANCE(lpr_combo,
+    tapping-term-ms = <300>;
+    bindings = <&lpr_shift>, <&lpr_alt>;
 )
 
 ZMK_COMBO(caps_lock_combo, &kp CAPS, LH3 LF5)
@@ -115,7 +130,7 @@ ZMK_LAYER(default_layer,
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼───┬───┤───┬─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
          &c_w_lf       &kp Z         &kp X         &c_c_combined &kp D         &kp V      &mo 1 &mo 2 &kp K        &kp H         &kp APOS      &kp LEFT      &kp DOWN      &kp RIGHT
     // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯       ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
-                                     &kp LALT      &kp LGUI      &kp RET       &kp SPACE             &kp BSPC      &lp_combo     &none         &none
+                                     &kp LALT      &kp LGUI      &kp RET       &kp SPACE             &kp BSPC      &lpl_combo     &lpr_combo         &none
 )
 
 ZMK_LAYER(lower_layer,
