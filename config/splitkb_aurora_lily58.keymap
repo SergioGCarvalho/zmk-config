@@ -86,7 +86,7 @@ ZMK_MOD_MORPH(lpl_shift,
 
 ZMK_MOD_MORPH(lpl_alt,
     bindings = <&kp LPAR>, <&kp LBKT>;
-    mods = <MOD_LALT>;
+    mods = <MOD_LSFT>;
 )
 
 ZMK_MOD_MORPH(lpr_shift,
@@ -96,7 +96,7 @@ ZMK_MOD_MORPH(lpr_shift,
 
 ZMK_MOD_MORPH(lpr_alt,
     bindings = <&kp RPAR>, <&kp RBKT>;
-    mods = <MOD_LALT>;
+    mods = <MOD_LSFT>;
 )
 
 ZMK_TAP_DANCE(lpl_combo,
