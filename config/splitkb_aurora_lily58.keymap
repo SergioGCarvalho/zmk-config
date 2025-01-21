@@ -84,7 +84,9 @@ ZMK_TAP_DANCE(c_c_combined,
 //     mods =<MOD_LALT>;
 // );
 
-ZMK_MACRO(mac_tilde,
+ZMK_BEHAVIOR(tilde_behavior,
+    compatible = "zmk,behavior-tap";
+    label = "Tilde";
     bindings = <&mac_a_tilde>;
 )
 
