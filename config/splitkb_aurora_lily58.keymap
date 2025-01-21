@@ -90,10 +90,10 @@ ZMK_TAP_DANCE(c_c_combined,
 //     bindings = <&mac_a_tilde>;
 // )
 
-// ZMK_MOD_MORPH(til_Nsix,
-//     bindings = <&kp N6>, <&kp TILDE>;
-//     mods = <MOD_LSFT>;
-// );
+ZMK_MOD_MORPH(til_N6,
+    bindings = <&kp N6>, <&kp TILDE>;
+    mods = <MOD_LSFT>;
+)
 
 ZMK_MOD_MORPH(lpl_combined,
     bindings = <&kp LPAR>, <&kp LBRC>, <&kp LBKT>;
@@ -133,7 +133,7 @@ ZMK_MACRO(lower_layer_macro,
 
 ZMK_LAYER(default_layer,
     // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-         &kp ESC       &kp N0        &kp N1        &kp N2        &kp N3        &kp N4                &kp N5        &til_Nsix        &kp N7        &kp N8        &kp N9        &kp DOT
+         &kp ESC       &kp N0        &kp N1        &kp N2        &kp N3        &kp N4                &kp N5        &til_N6        &kp N7        &kp N8        &kp N9        &kp DOT
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
          &kp TAB       &kp Q         &kp W         &kp F         &kp P         &kp B                 &kp J         &kp L         &kp U         &kp O         &kp Y         &kp COMMA
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
