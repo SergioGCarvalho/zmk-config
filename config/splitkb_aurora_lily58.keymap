@@ -74,15 +74,15 @@ ZMK_TAP_DANCE(c_c_mac,
     bindings = <&kp C>, <&mac_c_cedilla>;
 )
 
-// ZMK_TAP_DANCE(c_c_combined,
-//     tapping-term-ms = <300>;
-//     bindings = <&kp C>, <&mac_c_cedilla>, <&lin_c_cedilla>;
-// )
+ZMK_TAP_DANCE(c_c_combined,
+    tapping-term-ms = <300>;
+    bindings = <&kp C>, <&mac_c_cedilla>, <&lin_c_cedilla>;
+)
 
-ZMK_MOD_MORPH(c_c_combined,
-    bindings = <&kp C>, <&mac_c_cedilla>;
-    mods =<MOD_LALT>;
-);
+// ZMK_MOD_MORPH(c_c_combined,
+//     bindings = <&kp C>, <&mac_c_cedilla>;
+//     mods =<MOD_LALT>;
+// );
 
 ZMK_MOD_MORPH(til_6,
     bindings = <&kp N6>, <&mac_a_tilde>;
