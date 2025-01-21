@@ -95,15 +95,15 @@ ZMK_TAP_DANCE(c_c_combined,
 //     mods = <MOD_LSFT>;
 // );
 
-// ZMK_MOD_MORPH(lpl_combined,
-//     bindings = <&kp LPAR>, <&kp LBRC>, <&kp LBKT>;
-//     mods = <MOD_LSFT>, <MOD_LALT>;
-// );
+ZMK_MOD_MORPH(lpl_combined,
+    bindings = <&kp LPAR>, <&kp LBRC>, <&kp LBKT>;
+    mods = <MOD_LSFT>, <MOD_LALT>;
+)
 
-// ZMK_MOD_MORPH(lpr_combined,
-//     bindings = <&kp RPAR>, <&kp RBRC>, <&kp RBKT>;
-//     mods = <MOD_LSFT>, <MOD_LALT>;
-// );
+ZMK_MOD_MORPH(lpr_combined,
+    bindings = <&kp RPAR>, <&kp RBRC>, <&kp RBKT>;
+    mods = <MOD_LSFT>, <MOD_LALT>;
+)
 
 ZMK_MOD_MORPH(c_w_lff,
     bindings = <&c_w_lf>, <&kp CAPS>;
