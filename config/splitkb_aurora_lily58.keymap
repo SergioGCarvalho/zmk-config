@@ -99,6 +99,11 @@ ZMK_MOD_MORPH(lpr_alt,
     mods = <MOD_LSFT>;
 )
 
+ZMK_MOD_MORPH(c_w_lff,
+    bindings = <&c_w_lf>, <&kp CAPS>;
+    mods = <MOD_LCTL>;
+)
+
 ZMK_TAP_DANCE(lpl_combo,
     tapping-term-ms = <300>;
     bindings = <&lpl_shift>, <&lpl_alt>;
@@ -109,7 +114,7 @@ ZMK_TAP_DANCE(lpr_combo,
     bindings = <&lpr_shift>, <&lpr_alt>;
 )
 
-ZMK_COMBO(caps_lock_combo, &kp CAPS, LH3 LF5)
+//ZMK_COMBO(caps_lock_combo, &kp CAPS, LH3 LF5)
 
 
 ZMK_MACRO(lower_layer_macro,
@@ -128,7 +133,7 @@ ZMK_LAYER(default_layer,
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
          &kp LCTRL     &kp A         &kp R         &kp S         &kp T         &kp G                 &kp M         &kp N         &kp E         &kp I         &kp UP        &key_repeat
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼───┬───┤───┬─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-         &c_w_lf       &kp Z         &kp X         &c_c_combined &kp D         &kp V      &mo 1 &mo 2 &kp K        &kp H         &kp APOS      &kp LEFT      &kp DOWN      &kp RIGHT
+         &c_w_lff       &kp Z         &kp X         &c_c_combined &kp D         &kp V      &mo 1 &mo 2 &kp K        &kp H         &kp APOS      &kp LEFT      &kp DOWN      &kp RIGHT
     // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯       ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
                                      &kp LALT      &kp LGUI      &kp RET       &kp SPACE             &kp BSPC      &lpl_combo     &lpr_combo         &none
 )
