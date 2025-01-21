@@ -92,7 +92,7 @@ ZMK_TAP_DANCE(c_c_combined,
 
 ZMK_MOD_MORPH(til_Nsix,
     bindings = <&kp N6>, <&kp TILDE>;
-    mods =<MOD_LSFT>;
+    mods = <MOD_LSFT>;
 );
 
 ZMK_MOD_MORPH(lpl_combined,
