@@ -90,11 +90,15 @@ ZMK_TAP_DANCE(c_c_combined,
 //     bindings = <&mac_a_tilde>;
 // )
 
+ZMK_MOD_MORPH(quest_N1,
+    bindings = <&kp N1>, <&kp QUESTION>;
+    mods = <MOD_LALT>;
+)
+
 ZMK_MOD_MORPH(til_N6,
     bindings = <&kp N6>, <&kp TILDE>;
     mods = <MOD_LSFT>;
 )
-
 
 ZMK_MOD_MORPH(lpl,
     bindings = <&kp LPAR>, <&kp LBRC>;
