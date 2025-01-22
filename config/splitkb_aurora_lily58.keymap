@@ -95,14 +95,25 @@ ZMK_MOD_MORPH(til_N6,
     mods = <MOD_LSFT>;
 )
 
+
+ZMK_MOD_MORPH(lpl,
+    bindings = <&kp LPAR>, <&kp LBRC>;
+    mods = <MOD_LSFT>;
+)
+
 ZMK_MOD_MORPH(lpl_combined,
-    bindings = <&kp LPAR>, <&kp LBRC>, <&kp LBKT>;
-    mods = <MOD_LSFT>, <MOD_LALT>;
+    bindings = <&lpl>, <&kp LBKT>;
+    mods = <MOD_LALT>;
+)
+
+ZMK_MOD_MORPH(lpr,
+    bindings = <&kp RPAR>, <&kp RBRC>;
+    mods = <MOD_LSFT>;
 )
 
 ZMK_MOD_MORPH(lpr_combined,
-    bindings = <&kp RPAR>, <&kp RBRC>, <&kp RBKT>;
-    mods = <MOD_LSFT>, <MOD_LALT>;
+    bindings = <&lpr>, <&kp RBKT>;
+    mods = <MOD_LALT>;
 )
 
 ZMK_MOD_MORPH(c_w_lff,
