@@ -114,18 +114,18 @@ ZMK_MOD_MORPH(mix_N6,
 )
 
 // Combos to transform into ã and õ
-ZMK_COMBO(tilde_a_combo,
-    bindings = <&pt_a_tilde>;  // Outputs ã/Ã
-    key-positions = <N6 A>;
-    timeout-ms = <500>;
-)
+// ZMK_COMBO(tilde_a_combo,
+//     bindings = <&pt_a_tilde>;  // Outputs ã/Ã
+//     key-positions = <N6 A>;
+//     timeout-ms = <500>;
+// )
 
-// Combo to allow tilde (~) when pressing space after Shift + N6
-ZMK_COMBO(tilde_space_combo,
-    bindings = <&kp TILDE>;
-    key-positions = <N6 SPACE>;
-    timeout-ms = <500>;
-)
+// // Combo to allow tilde (~) when pressing space after Shift + N6
+// ZMK_COMBO(tilde_space_combo,
+//     bindings = <&kp TILDE>;
+//     key-positions = <N6 SPACE>;
+//     timeout-ms = <500>;
+// )
 
 
 ZMK_MOD_MORPH(lpl,
