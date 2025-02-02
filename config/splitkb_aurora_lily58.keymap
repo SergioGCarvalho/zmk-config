@@ -95,15 +95,38 @@ ZMK_MOD_MORPH(quest_N1,
     mods = <MOD_LALT>;
 )
 
-ZMK_MOD_MORPH(til_N6,
-    bindings = <&kp N6>, <&kp TILDE>;
+// Dead key behavior (acts as a placeholder for tilde)
+ZMK_BEHAVIOR(dead_tilde, macro,
+    wait-ms = <500>;  // Waits for the next key input
+    tap-ms = <5>;
+    bindings = <&macro_tap &kp TILDE>;  // By default, acts like tilde (~)
+)
+
+// Morph to switch behavior based on modifiers
+ZMK_MOD_MORPH(tilde_mod,
+    bindings = <&kp N6>, <&dead_tilde>;
     mods = <MOD_LSFT>;
 )
 
 ZMK_MOD_MORPH(mix_N6,
-    bindings = <&til_N6>, <&kp CARET>;
+    bindings = <&tilde_mod>, <&kp CARET>;
     mods = <MOD_LALT>;
 )
+
+// Combos to transform into ã and õ
+ZMK_COMBO(tilde_a_combo,
+    bindings = <&pt_a_tilde>;  // Outputs ã/Ã
+    key-positions = <N6 A>;
+    timeout-ms = <500>;
+)
+
+// Combo to allow tilde (~) when pressing space after Shift + N6
+ZMK_COMBO(tilde_space_combo,
+    bindings = <&kp TILDE>;
+    key-positions = <N6 SPACE>;
+    timeout-ms = <500>;
+)
+
 
 ZMK_MOD_MORPH(lpl,
     bindings = <&kp LPAR>, <&kp LBRC>;
