@@ -128,6 +128,13 @@ ZMK_MOD_MORPH(mix_N6,
 // )
 
 
+
+// ZMK_COMBO(tilde_space_combo, &kp TILDE, LF5 RT1, DEF)
+
+// ZMK_COMBO(tilde_a_combo, &pt_a_tilde, LF5 LF5, DEF)
+
+
+
 ZMK_MOD_MORPH(lpl,
     bindings = <&kp LPAR>, <&kp LBRC>;
     mods = <MOD_LSFT>;
