@@ -131,7 +131,7 @@ ZMK_MOD_MORPH(mix_N6,
 
 ZMK_COMBO(tilde_space_combo, &kp TILDE, RT1 LH0, DEF)
 
-ZMK_COMBO(tilde_a_combo, &pt_a_tilde, RT1 LB4, DEF)
+ZMK_COMBO(tilde_a_combo, &mac_a_tilde, RT1 LB4, DEF)
 
 
 
