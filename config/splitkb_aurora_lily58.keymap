@@ -160,6 +160,66 @@ ZMK_MOD_MORPH(c_w_lff,
     mods = <MOD_LALT>;
 )
 
+ZMK_MOD_MORPH(dotminor,
+    bindings = <&kp DOT>, <&kp LT>;
+    mods = <MOD_LSFT>;
+)
+
+ZMK_MOD_MORPH(dotbigger,
+    bindings = <&dotminor>, <&kp GT>;
+    mods = <MOD_LALT>;
+)
+
+ZMK_MOD_MORPH(comasemi,
+    bindings = <&kp COMMA>, <&kp SEMICOLON>;
+    mods = <MOD_LSFT>;
+)
+
+ZMK_MOD_MORPH(twodots,
+    bindings = <&comasemi>, <&kp COLON>;
+    mods = <MOD_LALT>;
+)
+
+ZMK_MOD_MORPH(graveapos,
+    bindings = <&kp GRAVE>, <&kp APOS>;
+    mods = <MOD_LSFT>;
+)
+
+ZMK_MOD_MORPH(gravedqt,
+    bindings = <&graveapos>, <&kp DQT>;
+    mods = <MOD_LALT>;
+)
+
+ZMK_MOD_MORPH(ninebar,
+    bindings = <&kp NINE>, <&kp PIPE>;
+    mods = <MOD_LSFT>;
+)
+
+ZMK_MOD_MORPH(ninebarr,
+    bindings = <&ninebar>, <&kp SLASH>;
+    mods = <MOD_LALT>;
+)
+
+ZMK_MOD_MORPH(upplus,
+    bindings = <&kp UP>, <&kp PLUS>;
+    mods = <MOD_LALT>;
+)
+
+ZMK_MOD_MORPH(downminus,
+    bindings = <&kp DOWN>, <&kp MINUS>;
+    mods = <MOD_LALT>;
+)
+
+ZMK_MOD_MORPH(leftstar,
+    bindings = <&kp LEFT>, <&kp STAR>;
+    mods = <MOD_LALT>;
+)
+
+ZMK_MOD_MORPH(rightslash,
+    bindings = <&kp RIGHT>, <&kp SLASH>;
+    mods = <MOD_LALT>;
+)
+
 // ZMK_TAP_DANCE(lpl_combo,
 //     tapping-term-ms = <300>;
 //     bindings = <&lpl_shift>, <&lpl_alt>;
@@ -183,13 +243,13 @@ ZMK_MACRO(lower_layer_macro,
 
 ZMK_LAYER(default_layer,
     // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-         &kp ESC       &kp N0        &quest_N1        &kp N2        &kp N3        &kp N4                &kp N5        &mix_N6        &kp N7        &kp N8        &kp N9        &kp DOT
+         &kp ESC       &kp N0        &quest_N1        &kp N2        &kp N3        &kp N4             &kp N5        &mix_N6       &kp N7        &kp N8        &ninebarr     &dotbigger
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-         &kp TAB       &kp Q         &kp W         &kp F         &kp P         &kp B                 &kp J         &kp L         &kp U         &kp O         &kp Y         &kp COMMA
+         &kp TAB       &kp Q         &kp W         &kp F         &kp P         &kp B                 &kp J         &kp L         &kp U         &kp O         &kp Y         &twodots
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-         &kp LCTRL     &kp A         &kp R         &kp S         &kp T         &kp G                 &kp M         &kp N         &kp E         &kp I         &kp UP        &key_repeat
+         &kp LCTRL     &kp A         &kp R         &kp S         &kp T         &kp G                 &kp M         &kp N         &kp E         &kp I         &upplus        &key_repeat
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼───┬───┤───┬─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-         &c_w_lff       &kp Z         &kp X         &c_c_combined &kp D         &kp V      &mo 1 &mo 2 &kp K        &kp H         &kp APOS      &kp LEFT      &kp DOWN      &kp RIGHT
+         &c_w_lff      &kp Z         &kp X         &c_c_combined &kp D         &kp V      &mo 1 &mo 2 &kp K        &kp H         &gravedqt     &leftstar     &downminus     &rightslash
     // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯       ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
                                      &kp LALT      &kp LGUI      &kp RET       &kp SPACE             &kp BSPC      &lpl_combined     &lpr_combined         &none
 )
