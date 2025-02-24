@@ -220,6 +220,11 @@ ZMK_MOD_MORPH(rightslash,
     mods = <MOD_LALT>;
 )
 
+ZMK_MOD_MORPH(eightunder,
+    bindings = <&kp N8>, <&kp UNDER>;
+    mods = <MOD_LSFT>;
+)
+
 // ZMK_TAP_DANCE(lpl_combo,
 //     tapping-term-ms = <300>;
 //     bindings = <&lpl_shift>, <&lpl_alt>;
@@ -243,7 +248,7 @@ ZMK_MACRO(lower_layer_macro,
 
 ZMK_LAYER(default_layer,
     // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-         &kp ESC       &kp N0        &quest_N1        &kp N2        &kp N3        &kp N4             &kp N5        &mix_N6       &kp N7        &kp N8        &ninebarr     &dotbigger
+         &kp ESC       &kp N0        &quest_N1        &kp N2        &kp N3        &kp N4             &kp N5        &mix_N6       &kp N7        &eightunder   &ninebarr     &dotbigger
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
          &kp TAB       &kp Q         &kp W         &kp F         &kp P         &kp B                 &kp J         &kp L         &kp U         &kp O         &kp Y         &twodots
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
