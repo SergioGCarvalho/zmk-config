@@ -191,7 +191,7 @@ ZMK_MOD_MORPH(gravedqt,
 )
 
 ZMK_MOD_MORPH(ninebar,
-    bindings = <&kp NINE>, <&kp PIPE>;
+    bindings = <&kp N9>, <&kp PIPE>;
     mods = <MOD_LSFT>;
 )
 
