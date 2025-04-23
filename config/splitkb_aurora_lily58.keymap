@@ -67,15 +67,9 @@ ZMK_UNICODE_PAIR(mac_aa,             N0, N0,  E, N1,  N0, N0,  C, N1) // á/Á
 
 
 ZMK_HOLD_TAP(random_white,
-    /* Choose hold when held beyond tapping-term or another key is pressed */
-    flavor           = "hold-preferred";     /* default hold-tap flavor */  
-    tapping-term-ms  = <200>;                /* 200 ms threshold */  
-
-    /* First binding = tap-action, second = hold-action */
-    bindings = <
-        &rgb_ug RGB_HUI                        /* cycle hue on tap */  
-      , &rgb_ug RGB_COLOR_HSB(0, 0, 1)         /* static white on hold */
-    >;
+    flavor           = "hold-preferred"; 
+    tapping-term-ms  = <200>;
+    bindings = <&rgb_ug RGB_HUI>, <&rgb_ug RGB_COLOR_HSB(0, 0, 1)>;
 )
 
 ZMK_TAP_DANCE(c_w_lf,
