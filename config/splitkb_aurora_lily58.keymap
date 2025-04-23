@@ -66,11 +66,20 @@ ZMK_UNICODE_PAIR(mac_a_tilde,        N0, N0, E, N3,   N0, N0,  C, N3) // ã/Ã
 ZMK_UNICODE_PAIR(mac_aa,             N0, N0,  E, N1,  N0, N0,  C, N1) // á/Á
 
 
-ZMK_HOLD_TAP(random_white,
-    flavor           = "hold-preferred"; 
-    tapping-term-ms  = <200>;
-    bindings = <&rgb_ug RGB_HUI> &rgb_ug RGB_COLOR_HSB(0, 0, 1)>;
+ZMK_MACRO(cycle_hue,
+    bindings = <&rgb_ug RGB_HUI>;
 )
+
+ZMK_MACRO(set_white,
+    bindings = <&rgb_ug RGB_COLOR_HSB(0, 0, 1)>;
+)
+
+ZMK_HOLD_TAP(cycle_white,
+    flavor           = "hold-preferred";
+    tapping-term-ms  = <200>;
+    bindings = <&cycle_hue , &set_white>;
+)
+
 
 ZMK_TAP_DANCE(c_w_lf,
     tapping-term-ms = <300>;
@@ -288,7 +297,7 @@ ZMK_LAYER(lower_layer,
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
          &kp GRAVE     &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT             &kp CARET     &kp AMPS      &kp STAR      &kp LPAR      &kp RPAR      &key_repeat
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼───┬───┤───┬─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &rgb_ug RGB_BRD &rgb_ug RGB_BRI &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_EFF &random_white    &trans &trans &kp MINUS   &kp PLUS      &kp LBRC      &kp RBRC      &kp PIPE      &trans
+    &rgb_ug RGB_BRD &rgb_ug RGB_BRI &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_EFF &cycle_white    &trans &trans &kp MINUS   &kp PLUS      &kp LBRC      &kp RBRC      &kp PIPE      &trans
     // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯       ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
                                      &bt BT_CLR    &trans        &kp C_AL_LOCK &trans                &trans        &trans        &trans        &trans
 )
