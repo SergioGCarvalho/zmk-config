@@ -24,6 +24,7 @@
 #define LOW 1
 #define RIS 2
 
+//see https://github.com/joelspadin/zmk-locales to change local keys
 // activate Linux-mode for helper script
 #undef OS_UNICODE_LEAD
 #undef OS_UNICODE_TRAIL
@@ -63,6 +64,19 @@ ZMK_UNICODE_PAIR(mac_u_grave,        N0, N0, F, N9,   N0, N0, D, N9)  // ù/Ù
 ZMK_UNICODE_PAIR(mac_u_circumflex,   N0, N0, F, B,    N0, N0, D, B)   // û/Û
 ZMK_UNICODE_PAIR(mac_a_tilde,        N0, N0, E, N3,   N0, N0,  C, N3) // ã/Ã
 ZMK_UNICODE_PAIR(mac_aa,             N0, N0,  E, N1,  N0, N0,  C, N1) // á/Á
+
+
+ZMK_HOLD_TAP(random_white,
+    /* Choose hold when held beyond tapping-term or another key is pressed */
+    flavor           = "hold-preferred";     /* default hold-tap flavor */  
+    tapping-term-ms  = <200>;                /* 200 ms threshold */  
+
+    /* First binding = tap-action, second = hold-action */
+    bindings = <
+        &rgb_ug RGB_HUI                        /* cycle hue on tap */  
+      , &rgb_ug RGB_COLOR_HSB(0, 0, 1)         /* static white on hold */
+    >;
+)
 
 ZMK_TAP_DANCE(c_w_lf,
     tapping-term-ms = <300>;
@@ -129,10 +143,11 @@ ZMK_MOD_MORPH(mix_N6,
 
 
 
-ZMK_COMBO(tilde_space_combo, &kp TILDE, RT1 LH0, DEF)
+// ZMK_COMBO(tilde_space_combo, &kp TILDE, RT1 LH0, DEF)
 
 ZMK_COMBO(tilde_a_combo, &mac_a_tilde, RT1 LB4, DEF)
 
+// ZMK_COMBO(, &mac_a_tilde, LF5 LB5 RB0, DEF)
 
 
 ZMK_MOD_MORPH(lpl,
@@ -246,6 +261,18 @@ ZMK_MACRO(lower_layer_macro,
                <&macro_release &mo 1>;
 )
 
+ZMK_MACRO(dual_xy,
+    /* Time to wait between each behavior (ms) */
+    wait-ms = <20>;
+
+    /* Time between press and release of each behavior (ms) */
+    tap-ms  = <10>;
+
+    /* Sequence: tap X, then tap Y */
+    bindings = <&kp LALT>, <&kp M>;
+)
+
+
 ZMK_LAYER(default_layer,
     // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
          &kp ESC       &kp N0        &quest_N1        &kp N2        &kp N3        &kp N4             &kp N5        &mix_N6       &kp N7        &eightunder   &ninebarr     &dotbigger
@@ -254,20 +281,20 @@ ZMK_LAYER(default_layer,
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
          &kp LCTRL     &kp A         &kp R         &kp S         &kp T         &kp G                 &kp M         &kp N         &kp E         &kp I         &upplus        &key_repeat
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼───┬───┤───┬─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-         &c_w_lff      &kp Z         &kp X         &c_c_combined &kp D         &kp V      &mo 1 &mo 2 &kp K        &kp H         &gravedqt     &leftstar     &downminus     &rightslash
+         &c_w_lff      &kp Z         &kp X         &kp C         &kp D         &kp V      &mo 1 &mo 2 &kp K        &kp H         &gravedqt     &leftstar     &downminus     &rightslash
     // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯       ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
-                                     &kp LALT      &kp LGUI      &kp RET       &kp SPACE             &kp BSPC      &lpl_combined     &lpr_combined         &none
+                                     &kp LALT      &kp LGUI      &kp RET       &kp SPACE             &kp BSPC      &lpl_combined     &lpr_combined         &dual_xy
 )
 
 ZMK_LAYER(lower_layer,
     // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-         &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4          &kp K_VOL_UP  &kp K_VOL_DN  &kp K_MUTE    &kp C_PP      &kp C_PREV    &kp C_NEXT
+         &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4          &kp K_VOL_DN  &kp K_VOL_UP  &kp K_MUTE    &kp C_PP      &kp C_PREV    &kp C_NEXT
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
          &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                &kp F7        &kp F8        &kp F9        &kp F10       &kp F11       &kp F12
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-         &kp GRAVE     &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT             &kp CARET     &kp AMPS      &kp STAR      &kp LPAR      &kp RPAR      &kp TILDE
+         &kp GRAVE     &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT             &kp CARET     &kp AMPS      &kp STAR      &kp LPAR      &kp RPAR      &key_repeat
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼───┬───┤───┬─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-         &rgb_ug RGB_BRD &rgb_ug RGB_BRI &trans    &trans        &trans        &trans    &trans &trans &kp MINUS   &kp PLUS      &kp LBRC      &kp RBRC      &kp PIPE      &trans
+    &rgb_ug RGB_BRD &rgb_ug RGB_BRI &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_EFF &random_white    &trans &trans &kp MINUS   &kp PLUS      &kp LBRC      &kp RBRC      &kp PIPE      &trans
     // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯       ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
                                      &bt BT_CLR    &trans        &kp C_AL_LOCK &trans                &trans        &trans        &trans        &trans
 )
@@ -279,7 +306,7 @@ ZMK_LAYER(raise_layer,
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
          &kp GRAVE     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                &kp N6        &kp N7        &kp N8        &kp N9        &kp N0        &trans
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-         &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                &trans        &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans
+         &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                &trans        &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &key_repeat
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼───┬───┤───┬─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
          &kp F7        &kp F8        &kp F9        &kp F10       &kp F11       &kp F12   &trans &trans &kp KP_PLUS &kp MINUS     &kp EQUAL     &kp LBKT      &kp RBKT      &kp BSLH
     // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯       ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
