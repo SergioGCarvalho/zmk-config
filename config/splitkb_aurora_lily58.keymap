@@ -74,11 +74,11 @@ ZMK_MACRO(set_white,
     bindings = <&rgb_ug RGB_COLOR_HSB(0, 0, 1)>;
 )
 
-ZMK_HOLD_TAP(cycle_white,
-    flavor           = "hold-preferred";
-    tapping-term-ms  = <200>;
-    bindings = <&cycle_hue , &set_white>;
-)
+// ZMK_HOLD_TAP(cycle_white,
+//     flavor           = "hold-preferred";
+//     tapping-term-ms  = <200>;
+//     bindings = <&cycle_hue , &set_white>;
+// )
 
 
 ZMK_TAP_DANCE(c_w_lf,
@@ -297,7 +297,7 @@ ZMK_LAYER(lower_layer,
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
          &kp GRAVE     &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT             &kp CARET     &kp AMPS      &kp STAR      &kp LPAR      &kp RPAR      &key_repeat
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼───┬───┤───┬─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &rgb_ug RGB_BRD &rgb_ug RGB_BRI &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_EFF &cycle_white    &trans &trans &kp MINUS   &kp PLUS      &kp LBRC      &kp RBRC      &kp PIPE      &trans
+    &rgb_ug RGB_BRD &rgb_ug RGB_BRI &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_EFF &rgb_ug RGB_COLOR_HSB(0, 0, 1)    &trans &trans &kp MINUS   &kp PLUS      &kp LBRC      &kp RBRC      &kp PIPE      &trans
     // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯       ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
                                      &bt BT_CLR    &trans        &kp C_AL_LOCK &trans                &trans        &trans        &trans        &trans
 )
