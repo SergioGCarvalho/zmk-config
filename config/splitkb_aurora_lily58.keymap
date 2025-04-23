@@ -272,11 +272,7 @@ ZMK_MACRO(alt_m_combo,
     tap-ms  = <10>;
 
     /* Press Alt, tap M, release Alt */
-    bindings = <
-        &macro_press   &kp LALT
-      , &macro_tap     &kp M
-      , &macro_release &kp LALT
-    >;
+    bindings = <&macro_press   &kp LALT>, <&macro_tap     &kp M>, <&macro_release &kp LALT>;
 )
 
 
