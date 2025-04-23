@@ -264,16 +264,21 @@ ZMK_MACRO(lower_layer_macro,
                <&macro_release &mo 1>;
 )
 
-ZMK_MACRO(dual_xy,
-    /* Time to wait between each behavior (ms) */
-    wait-ms = <20>;
+ZMK_MACRO(alt_m_combo,
+    /* Delay between each behavior step (ms) */
+    wait-ms = <0>;
 
-    /* Time between press and release of each behavior (ms) */
+    /* Delay for each tap’s press→release (ms) */
     tap-ms  = <10>;
 
-    /* Sequence: tap X, then tap Y */
-    bindings = <&kp LALT>, <&kp M>;
+    /* Press Alt, tap M, release Alt */
+    bindings = <
+        &macro_press   &kp LALT
+      , &macro_tap     &kp M
+      , &macro_release &kp LALT
+    >;
 )
+
 
 
 ZMK_LAYER(default_layer,
@@ -286,7 +291,7 @@ ZMK_LAYER(default_layer,
     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼───┬───┤───┬─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
          &c_w_lff      &kp Z         &kp X         &kp C         &kp D         &kp V      &mo 1 &mo 2 &kp K        &kp H         &gravedqt     &leftstar     &downminus     &rightslash
     // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯       ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
-                                     &kp LALT      &kp LGUI      &kp RET       &kp SPACE             &kp BSPC      &lpl_combined     &lpr_combined         &dual_xy
+                                     &kp LALT      &kp LGUI      &kp RET       &kp SPACE             &kp BSPC      &lpl_combined     &lpr_combined         &alt_m_combo
 )
 
 ZMK_LAYER(lower_layer,
